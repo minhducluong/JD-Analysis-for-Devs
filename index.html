@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>JD Analysis for Devs</title>
+	<!-- BS 4 -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed&display=swap&subset=vietnamese" rel="stylesheet">
+	<!-- My CSS -->
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div aria-live="polite" aria-atomic="true" style="position: fixed; top: 0; right: 0; min-height: 200px;" id="toast-wrap">
+			<div class="toast" data-delay="500">
+				<div class="toast-header">
+					<svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#28a745"></rect></svg>
+					<strong class="mr-auto">JD Analysis</strong>
+					<small class="pl-3">just now</small>
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body">
+					All saved!
+				</div>
+			</div>
+		</div>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" id="input-tab" data-toggle="tab" href="#input" role="tab" aria-controls="input" aria-selected="true">Input</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="chart-tab" data-toggle="tab" href="#chart" role="tab" aria-controls="chart" aria-selected="false">Chart</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">About</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="input" role="tabpanel" aria-labelledby="input-tab">
+				<div class="table-responsive" style="overflow-y: auto;">
+					<table class="table table-condensed table-hover">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Employers</th>
+								<th style="min-width: 140px" scope="col">Skills Required</th>
+								<th style="min-width: 120px; text-align: right;"><a class="delete-all" href="javascript:void(0)">Delete All</a></th>
+							</tr>
+						</thead>
+						<tbody id="myAccord" class="accordion">    
+						</tbody>				    
+					</table>
+				</div>
+				<div id="below-table">
+					<div class="mt-3">
+						<a class="pl-2" id="add-new" href="javascript:void(0)">	&#43; Add new row</a>
+					</div>
+					<div><button id="save-btn" class="btn btn-success btn-lg d-block mx-auto mt-4">Save</button></div>					
+				</div>
+
+				<div class="timestamp-wrap">Last edited on <span contenteditable class="timestamp" style="background-color: lightyellow">30/08/2019</span></div>
+			</div>
+			<div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab"></div>
+			<div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">					
+				<details>
+					<summary>Vì sao JD Analysis for Devs ra đời?</summary>
+					<p>Để có thể kiếm được một công việc lập trình tốt, cần phải có sự chuẩn bị tốt về các kĩ năng (skills) mà nhà tuyển dụng (employers) yêu cầu.</p>
+					<p>Giả dụ, mẩu tin tuyển dụng (JD - Job Description) của công ty ABC yêu cầu HTML5, CSS3, Javascript, ES6, ReactJS, Git, CSS preprocessor, HTTP, API, REST, GRAPHQL, JSON, unit test, XSS, CSRF, sync vs. async, promise, immutability, pure function. Bạn là người còn đang trong quá trình học, có cả tá skills trong JD mà thậm chí bạn chưa từng thấy bao giờ. Tuy nhiên, nó vẫn được lặp lại trong rất nhiều JD của các công ty khác. Những skills được nhiều JD lặp lại chính là những skills bạn cần tập trung vào và rèn luyện nhuần nhuyễn để tăng xác suất kiếm được việc tốt.</p>
+					<p>Do đó, khi bạn lên một trang tìm kiếm việc làm và search, kết quả trả về là một list các JD phù hợp. Bạn phát sinh nhu cầu muốn thống kê xem những skills nào được nhiều JD lặp lại nhất. Hay nói cách khác, những skills nào được nhiều công ty yêu cầu nhất.</p>
+					<p><strong class="strong">JD Analysis for Devs</strong> ra đời.</p>						
+				</details>
+				<details>
+					<summary>JD Analysis for Devs về cơ bản</summary>
+					<div class="row">
+						<div class="col-md-6">
+							<p>Bạn nhập input.</p>
+							<img class="img-fluid" src="images/screenshot_input.png" alt="input">
+						</div>
+						<div class="col-md-6">
+							<p>Và <strong class="strong">JD Analysis for Devs</strong> cho bạn kết quả của thống kê dưới dạng đồ thị (chart).</p>
+							<img class="img-fluid" src="images/screenshot_chart.png" alt="chart">
+						</div>
+					</div>
+				</details>
+				<details>
+					<summary>Một số tính năng bổ sung</summary>
+					<ol>
+						<li>
+							Note <br>
+							Cho phép thêm ghi chú cho mỗi công ty. Ví dụ, bạn muốn note lại công ty này có vị trí gần nhà bạn.
+						</li>
+						<li>
+							Last Edited On... <br>
+							Cho phép lưu lại ngày cuối cùng bạn nhập liệu. Bạn có thể click vào dòng cuối cùng của trang để chỉnh sửa ngày theo ý muốn, và đừng quên "Save" để lưu lại.
+						</li>
+					</ol>
+				</details>
+				<details>
+					<summary>Lưu ý khi sử dụng</summary>
+					<ol>
+						<li>Đảm bảo đúng cú pháp
+							<p>Dù khá đơn giản nhưng <strong class="strong">JD Analysis for Devs</strong> yêu cầu người dùng nhập đúng cú pháp sau cho trường "Skills Required": <sp>Các skills sẽ ngăn cách nhau bởi dấu phẩy <span style="font-size: 30px">,</span></sp></p>
+							
+							<p>Chỉ cần đảm bảo điều trên, mọi khoảng trống (whitespace) sẽ đều được xử lý. Nếu cú pháp về dấu phẩy trên không được đảm bảo, đồ thị có thể cho bạn một <span class="text-danger">kết quả không chính xác.</span></p>
+							
+							<p>Cuối cùng, hệ thống sẽ tự động KHÔNG tính những skills bị lặp lại trong cùng một JD.</p>
+						</li>
+						<li>Dữ liệu được lưu trên trình duyệt
+							<p><strong class="strong">JD Analysis for Devs</strong> sử dụng localStorage để lưu trữ dữ liệu trên trình duyệt. Dù chương trình là responsive, tác giả vẫn khuyến khích nên sử dụng trên một PC cố định.</p>
+						</li>
+					</ol>
+				</details>
+				<hr>
+				<p style="font-family: 'Saira Extra Condensed', sans-serif;">
+					Author: Lương Minh Đức <br>
+					Version: 1.0.0 <br>
+					Copyright 2019 <br>
+					Mọi góp ý về <strong class="strong">JD Analysis for Devs</strong> xin gửi về: <i>luongminhduc94@gmail.com</i> <br>
+					Nếu bạn thấy <strong class="strong">JD Analysis for Devs</strong> giúp ích cho mình, bạn có thể ủng hộ tác giả thông qua Ví điện tử Momo 0798700844. <br>
+					Have fun and wish you secure a good job!
+				</p>
+			</div>
+		</div>
+	</div>
+<!-- 	<img class="img-fluid" src="images/nodata.png" alt="nodata">
+-->	<!-- BS -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Chart JS -->
+<script src="js/Chart.min.js"></script>
+<!-- my JS -->
+<script src="js/script.js"></script>
+</body>
+</html>

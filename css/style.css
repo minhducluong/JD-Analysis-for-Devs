@@ -1,0 +1,63 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+a {
+	color: #28a745;
+}
+a:hover {
+	color: #19692c;
+}
+.table th[scope='col'] {
+	border-top: none;
+}
+td {
+	cursor: text;
+}
+[contenteditable]:focus {
+	outline: none;
+	background-color: lightyellow;
+}
+td:last-child {
+	text-align: right;
+}
+td[placeholder] {
+	text-align: left;
+	font-style: italic;
+}
+#toast-wrap {
+	display: none;
+}
+.action {
+	color: #28a745;
+}
+[contenteditable]:empty:before {
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}
+.nav-tabs .nav-link {
+	font-weight: bold;
+}
+.timestamp-wrap {
+	position: absolute;
+	bottom: 10px;
+	left: 15px;
+}
+img[alt='nodata'], #myChart {
+	max-height: calc(100vh - 42px);
+}
+details {
+  margin: 1rem;
+}
+summary {
+  font-weight: bold;
+}
+summary:focus {
+	outline: none;
+}
+summary:focus::-webkit-details-marker {
+	outline: none;
+}
+.strong {
+	color: #28a745;
+	font-style: italic;
+}
