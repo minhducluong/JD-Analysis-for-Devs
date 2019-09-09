@@ -8,4 +8,4 @@ Do đó, khi bạn lên một trang tìm kiếm việc làm và search, kết qu
 
 JD Analysis for Devs ra đời.
 
-Để biết thêm thông tin chi tiết cũng như cách thức sử dụng, hãy truy cập vào [JD Analysis for Devs](https://raw.githack.com/minhducluong/JD-Analysis-for-Devs/master/index.html).
+Để biết thêm thông tin chi tiết cũng như cách thức sử dụng, hãy truy cập vào [JD Analysis for Devs](https://minhducluong.github.io/JD-Analysis-for-Devs/).
